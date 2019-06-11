@@ -1,5 +1,4 @@
 # OS2019 Project2
-![](https://i.imgur.com/SprVWWI.png)
 
 PROGRAMMING DESIGN
 ----
@@ -18,7 +17,6 @@ PROGRAMMING DESIGN
     - receive message on a socket with TCP
 - `ssize_t ksend(ksocket_t socket, const void *buffer, size_t length, int flags)`
     - send message on a socekt with TCP
-- 
 
 ### User program
 #### `master.c`
@@ -41,7 +39,7 @@ while (offset < file_size) {
     ioctl(dev_fd, 0x12345678, length);
 }
 ```
-#### slave.c
+#### `slave.c`
 - Implemented the `mmap` method
 ```clike=
 while (true) {
@@ -64,7 +62,7 @@ while (true) {
 ```
 
 ### Devices
-#### master_device.c
+#### `master_device.c`
 - implemented mmap_fault
     - it keeps on generating error messages when the function takes more than one parameter, so we changed the method from parsing `vma` as one of the parameter from the outside, into `vma = vmf->vma` and it worked.
 ```clike=
@@ -93,13 +91,13 @@ static int my_mmap(struct file *file, struct vm_area_struct *vma)
 	return 0;
 }
 ```
-#### slave_device.c
-- implemented mmap_fault and my_mmap <b>(almost same as master_device.c</b>
+#### `slave_device.c`
+- implemented mmap_fault and my_mmap <b>(almost same as master_device.c)</b>
 
 
 THE RESULT
 ----
-### mmap
+### `mmap`
 - file 1
 ![](https://i.imgur.com/yft9pJb.png)
 - file 2
@@ -110,7 +108,7 @@ THE RESULT
 ![](https://i.imgur.com/VsXu7fc.png)
 
 
-### fcntl
+### `fcntl`
 - file 1
 ![](https://i.imgur.com/Z04zUaT.png)
 - file 2
