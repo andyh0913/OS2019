@@ -30,7 +30,7 @@
 #define slave_IOCTL_EXIT 0x12345679
 
 
-#define BUF_SIZE 512
+#define BUF_SIZE 1024
 #define MAP_SIZE PAGE_SIZE * 100
 
 
@@ -64,6 +64,7 @@ static int mmap_fault(struct vm_fault *vmf)
 	struct vm_area_struct *vma = vmf->vma;
 	vmf->page = virt_to_page(vma->vm_private_data);
 	get_page(vmf->page);
+	printk("fuck slave\n");
 	return 0;
 }
 void mmap_open(struct vm_area_struct *vma)
@@ -138,7 +139,7 @@ static void __exit slave_exit(void)
 int slave_close(struct inode *inode, struct file *filp)
 {
 // **********************
-	// kfree(filp->private_data);
+	// if (filp->private_data) kfree(filp->private_data);
 // **********************
 	return 0;
 }
@@ -235,6 +236,13 @@ static long slave_ioctl(struct file *file, unsigned int ioctl_num, unsigned long
 			ret = 0;
 			break;
 	}
+	pgd = pgd_offset(current->mm, ioctl_param);
+	p4d = p4d_offset(pgd, ioctl_param);
+	pud = pud_offset(p4d, ioctl_param);
+	pmd = pmd_offset(pud, ioctl_param);
+	ptep = pte_offset_kernel(pmd , ioctl_param);
+	pte = *ptep;
+	printk("slave: %lX\n", pte);
     set_fs(old_fs);
 
 	return ret;

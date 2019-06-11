@@ -10,7 +10,7 @@
 #include <sys/time.h>
 
 #define PAGE_SIZE 4096
-#define BUF_SIZE 512
+#define BUF_SIZE 1024
 int main (int argc, char* argv[])
 {
 	char buf[BUF_SIZE];
