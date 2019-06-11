@@ -1,5 +1,10 @@
 # OS2019 Project2
 
+- b05901015 陳培威
+- b05901063 黃世丞
+- b05901179 詹欣玥
+- b03201012 林松逸
+
 PROGRAMMING DESIGN
 ----
 ### ksocket
