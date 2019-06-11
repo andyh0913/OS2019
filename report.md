@@ -152,7 +152,5 @@ WORK LIST
     - environment
 - b05901179 詹欣玥
     - master_device/slave_device
-    - comparison
-    - 提供[小兔兔影片](https://www.facebook.com/OuMaMaFenSiTuan/videos/364119267786098/UzpfSTEwMDAwMDM4ODg0OTA3ODoyNDExNzk4MDQ1NTA5ODAw/)在寫到崩潰時紓壓
-    - ~~提供彩虹糖跟買晚餐~~
+    - report: comparison
 - b03201012 林松逸
