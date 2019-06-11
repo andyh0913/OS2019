@@ -148,12 +148,19 @@ COMPARISON OF FILE I/O AND MMAP
 WORK LIST
 ----
 - b05901015 陳培威
+    - comments of each function in user_program/
     - user program
     - debugging
+    - report: user_program
 - b05901063 黃世丞
+    - studying how modules work and some documents
     - debugging
     - environment
+    - report: result
 - b05901179 詹欣玥
-    - master_device/slave_device
+    - comments of each function in master_device.c
+    - master_device
+    - slave_device
     - report: comparison
 - b03201012 林松逸
+    - report: ksocket
